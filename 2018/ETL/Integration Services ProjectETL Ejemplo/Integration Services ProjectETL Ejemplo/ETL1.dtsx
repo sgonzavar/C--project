@@ -1,0 +1,2641 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/21/2018 3:05:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-AIT9IB1"
+  DTS:CreatorName="DESKTOP-AIT9IB1\HP"
+  DTS:DTSID="{9D22412F-086A-4B79-80E5-948631988726}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="ETL1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{E3009F66-72D0-4721-8462-3F6E9F675C92}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{5DCDF3A5-2304-48BB-BF02-4E4998A6B943}"
+      DTS:ObjectName="Administrador de conexiones con Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\HP\Desktop\Base salarios.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{CA059213-CF90-40DC-87FA-0DF9C6FB28CD}"
+      DTS:ObjectName="Administrador de conexiones con Excel 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\HP\Desktop\Base salarios2.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{24733EEE-A247-4A15-93E2-11E5479D0E45}"
+      DTS:ObjectName="Administrador de conexiones con Excel 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\HP\Desktop\Base salarios1.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-AIT9IB1.ETL 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{24E5FB3A-60FE-4F2E-957F-62899D800DE4}"
+      DTS:ObjectName="DESKTOP-AIT9IB1.ETL 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-AIT9IB1;Initial Catalog=ETL;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-ETL1-{24E5FB3A-60FE-4F2E-957F-62899D800DE4}DESKTOP-AIT9IB1.ETL 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-AIT9IB1.ETL 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3B31C50C-A45B-476C-83D3-16F28B7DAA58}"
+      DTS:ObjectName="DESKTOP-AIT9IB1.ETL 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-AIT9IB1;Initial Catalog=ETL;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-ETL1-{3B31C50C-A45B-476C-83D3-16F28B7DAA58}DESKTOP-AIT9IB1.ETL 2;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ETL1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8EE98F7A-066F-4ABF-958F-F4EB7B5DC23E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL1\BD"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="BD"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'Base de datos$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL1\BD.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL1\BD.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[ID empleado]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[ID empleado]"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[ID empleado]"
+                      name="ID empleado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Apellido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Apellido]"
+                      length="255"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Apellido]"
+                      name="Apellido"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Nombre]"
+                      length="255"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Seccional]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Seccional]"
+                      length="255"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Seccional]"
+                      name="Seccional"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Facultad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Facultad]"
+                      length="255"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Facultad]"
+                      name="Facultad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Cargo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Cargo]"
+                      length="255"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Cargo]"
+                      name="Cargo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Salario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Salario]"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Salario]"
+                      name="Salario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Fch comienzo]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Fch comienzo]"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Fch comienzo]"
+                      name="Fch comienzo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Fch nacimiento]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Fch nacimiento]"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Fch nacimiento]"
+                      name="Fch nacimiento"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[ID empleado]"
+                      dataType="r8"
+                      name="ID empleado" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      name="Apellido" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Seccional]"
+                      dataType="wstr"
+                      length="255"
+                      name="Seccional" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Facultad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Facultad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Cargo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Salario]"
+                      dataType="cy"
+                      name="Salario" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Fch comienzo]"
+                      dataType="date"
+                      name="Fch comienzo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Output].ExternalColumns[Fch nacimiento]"
+                      dataType="date"
+                      name="Fch nacimiento" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL1\BD.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[ID empleado]"
+                      dataType="r8"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[ID empleado]"
+                      name="ID empleado" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Apellido]"
+                      name="Apellido" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Seccional]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Seccional]"
+                      name="Seccional" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Facultad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Facultad]"
+                      name="Facultad" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Cargo]"
+                      name="Cargo" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Salario]"
+                      dataType="cy"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Salario]"
+                      name="Salario" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Fch comienzo]"
+                      dataType="date"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Fch comienzo]"
+                      name="Fch comienzo" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Fch nacimiento]"
+                      dataType="date"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[Fch nacimiento]"
+                      name="Fch nacimiento" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL1\BD1"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="BD1"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'Base de datos$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL1\BD1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL1\BD1.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[ID empleado]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[ID empleado]"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[ID empleado]"
+                      name="ID empleado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Apellido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Apellido]"
+                      length="255"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Apellido]"
+                      name="Apellido"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Nombre]"
+                      length="255"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Seccional]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Seccional]"
+                      length="255"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Seccional]"
+                      name="Seccional"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Facultad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Facultad]"
+                      length="255"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Facultad]"
+                      name="Facultad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Cargo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Cargo]"
+                      length="255"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Cargo]"
+                      name="Cargo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Salario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Salario]"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Salario]"
+                      name="Salario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Fch comienzo]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Fch comienzo]"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Fch comienzo]"
+                      name="Fch comienzo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Fch nacimiento]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Fch nacimiento]"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Fch nacimiento]"
+                      name="Fch nacimiento"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[ID empleado]"
+                      dataType="r8"
+                      name="ID empleado" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      name="Apellido" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Seccional]"
+                      dataType="wstr"
+                      length="255"
+                      name="Seccional" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Facultad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Facultad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Cargo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Salario]"
+                      dataType="cy"
+                      name="Salario" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Fch comienzo]"
+                      dataType="date"
+                      name="Fch comienzo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Output].ExternalColumns[Fch nacimiento]"
+                      dataType="date"
+                      name="Fch nacimiento" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL1\BD1.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[ID empleado]"
+                      dataType="r8"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[ID empleado]"
+                      name="ID empleado" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Apellido]"
+                      name="Apellido" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Seccional]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Seccional]"
+                      name="Seccional" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Facultad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Facultad]"
+                      name="Facultad" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Cargo]"
+                      name="Cargo" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Salario]"
+                      dataType="cy"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Salario]"
+                      name="Salario" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Fch comienzo]"
+                      dataType="date"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Fch comienzo]"
+                      name="Fch comienzo" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Fch nacimiento]"
+                      dataType="date"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[Fch nacimiento]"
+                      name="Fch nacimiento" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL1\BD2"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="BD2"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Hoja1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL1\BD2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL1\BD2.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[ID empleado]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[ID empleado]"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[ID empleado]"
+                      name="ID empleado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Apellido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Apellido]"
+                      length="255"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Apellido]"
+                      name="Apellido"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Nombre]"
+                      length="255"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Seccional]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Seccional]"
+                      length="255"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Seccional]"
+                      name="Seccional"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Facultad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Facultad]"
+                      length="255"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Facultad]"
+                      name="Facultad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Cargo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Cargo]"
+                      length="255"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Cargo]"
+                      name="Cargo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Salario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Salario]"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Salario]"
+                      name="Salario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Fch comienzo]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Fch comienzo]"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Fch comienzo]"
+                      name="Fch comienzo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Fch nacimiento]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Fch nacimiento]"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Fch nacimiento]"
+                      name="Fch nacimiento"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[ID empleado]"
+                      dataType="r8"
+                      name="ID empleado" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      name="Apellido" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Seccional]"
+                      dataType="wstr"
+                      length="255"
+                      name="Seccional" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Facultad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Facultad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Cargo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Salario]"
+                      dataType="cy"
+                      name="Salario" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Fch comienzo]"
+                      dataType="date"
+                      name="Fch comienzo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[Fch nacimiento]"
+                      dataType="date"
+                      name="Fch nacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Output].ExternalColumns[F10]"
+                      dataType="wstr"
+                      length="255"
+                      name="F10" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL1\BD2.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[ID empleado]"
+                      dataType="r8"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[ID empleado]"
+                      name="ID empleado" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Apellido]"
+                      name="Apellido" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Seccional]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Seccional]"
+                      name="Seccional" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Facultad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Facultad]"
+                      name="Facultad" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Cargo]"
+                      name="Cargo" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Salario]"
+                      dataType="cy"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Salario]"
+                      name="Salario" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Fch comienzo]"
+                      dataType="date"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Fch comienzo]"
+                      name="Fch comienzo" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Fch nacimiento]"
+                      dataType="date"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[Fch nacimiento]"
+                      name="Fch nacimiento" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL1\BDUNION"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="BDUNION"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[BDUNION]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL1\BDUNION.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-AIT9IB1.ETL 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-AIT9IB1.ETL 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].Columns[ID empleado]"
+                      cachedDataType="r8"
+                      cachedName="ID empleado"
+                      externalMetadataColumnId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[ID empleado]"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[ID empleado]" />
+                    <inputColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellido"
+                      externalMetadataColumnId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Apellido]"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Apellido]" />
+                    <inputColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Nombre]"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].Columns[Seccional]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Seccional"
+                      externalMetadataColumnId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Seccional]"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Seccional]" />
+                    <inputColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].Columns[Facultad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Facultad"
+                      externalMetadataColumnId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Facultad]"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Facultad]" />
+                    <inputColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].Columns[Cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Cargo"
+                      externalMetadataColumnId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Cargo]"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Cargo]" />
+                    <inputColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].Columns[Salario]"
+                      cachedDataType="cy"
+                      cachedName="Salario"
+                      externalMetadataColumnId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Salario]"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Salario]" />
+                    <inputColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].Columns[Fch comienzo]"
+                      cachedDataType="date"
+                      cachedName="Fch comienzo"
+                      externalMetadataColumnId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Fch comienzo]"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Fch comienzo]" />
+                    <inputColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].Columns[Fch nacimiento]"
+                      cachedDataType="date"
+                      cachedName="Fch nacimiento"
+                      externalMetadataColumnId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Fch nacimiento]"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Fch nacimiento]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[ID empleado]"
+                      dataType="r8"
+                      name="ID empleado" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      name="Apellido" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Seccional]"
+                      dataType="wstr"
+                      length="255"
+                      name="Seccional" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Facultad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Facultad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Cargo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Salario]"
+                      dataType="cy"
+                      name="Salario" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Fch comienzo]"
+                      dataType="dbTimeStamp"
+                      name="Fch comienzo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input].ExternalColumns[Fch nacimiento]"
+                      dataType="dbTimeStamp"
+                      name="Fch nacimiento" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL1\BDUNION.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\BDUNION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\BDUNION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL1\BDUNION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\BDUNION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL1\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input].Columns[ID empleado]"
+                      cachedDataType="r8"
+                      cachedName="ID empleado"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[ID empleado]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellido"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Apellido]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input].Columns[Seccional]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Seccional"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Seccional]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input].Columns[Facultad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Facultad"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Facultad]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input].Columns[Cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Cargo"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Cargo]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input].Columns[Salario]"
+                      cachedDataType="cy"
+                      cachedName="Salario"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Salario]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input].Columns[Fch comienzo]"
+                      cachedDataType="date"
+                      cachedName="Fch comienzo"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Fch comienzo]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input].Columns[Fch nacimiento]"
+                      cachedDataType="date"
+                      cachedName="Fch nacimiento"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Fch nacimiento]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de ID empleado]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de ID empleado]"
+                      name="Copia de ID empleado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD1.Outputs[Excel Source Output].Columns[ID empleado]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Apellido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Apellido]"
+                      name="Copia de Apellido"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Apellido]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Nombre]"
+                      name="Copia de Nombre"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Nombre]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Seccional]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Seccional]"
+                      name="Copia de Seccional"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Seccional]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Facultad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Facultad]"
+                      name="Copia de Facultad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Facultad]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Cargo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Cargo]"
+                      name="Copia de Cargo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Cargo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Salario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Salario]"
+                      name="Copia de Salario"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Salario]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Fch comienzo]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Fch comienzo]"
+                      name="Copia de Fch comienzo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Fch comienzo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Fch nacimiento]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Fch nacimiento]"
+                      name="Copia de Fch nacimiento"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Fch nacimiento]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL1\Data Conversion 1"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input].Columns[ID empleado]"
+                      cachedDataType="r8"
+                      cachedName="ID empleado"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[ID empleado]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellido"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Apellido]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input].Columns[Seccional]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Seccional"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Seccional]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input].Columns[Facultad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Facultad"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Facultad]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input].Columns[Cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Cargo"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Cargo]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input].Columns[Salario]"
+                      cachedDataType="cy"
+                      cachedName="Salario"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Salario]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input].Columns[Fch comienzo]"
+                      cachedDataType="date"
+                      cachedName="Fch comienzo"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Fch comienzo]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input].Columns[Fch nacimiento]"
+                      cachedDataType="date"
+                      cachedName="Fch nacimiento"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Fch nacimiento]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de ID empleado]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de ID empleado]"
+                      name="Copia de ID empleado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD2.Outputs[Excel Source Output].Columns[ID empleado]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Apellido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Apellido]"
+                      name="Copia de Apellido"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Apellido]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Nombre]"
+                      name="Copia de Nombre"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Nombre]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Seccional]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Seccional]"
+                      name="Copia de Seccional"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Seccional]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Facultad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Facultad]"
+                      name="Copia de Facultad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Facultad]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Cargo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Cargo]"
+                      name="Copia de Cargo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Cargo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Salario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Salario]"
+                      name="Copia de Salario"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Salario]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Fch comienzo]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Fch comienzo]"
+                      name="Copia de Fch comienzo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Fch comienzo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Fch nacimiento]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copia de Fch nacimiento]"
+                      name="Copia de Fch nacimiento"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Fch nacimiento]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL1\Data Conversion 2"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input].Columns[ID empleado]"
+                      cachedDataType="r8"
+                      cachedName="ID empleado"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[ID empleado]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellido"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Apellido]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input].Columns[Seccional]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Seccional"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Seccional]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input].Columns[Facultad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Facultad"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Facultad]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input].Columns[Cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Cargo"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Cargo]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input].Columns[Salario]"
+                      cachedDataType="cy"
+                      cachedName="Salario"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Salario]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input].Columns[Fch comienzo]"
+                      cachedDataType="date"
+                      cachedName="Fch comienzo"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Fch comienzo]" />
+                    <inputColumn
+                      refId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input].Columns[Fch nacimiento]"
+                      cachedDataType="date"
+                      cachedName="Fch nacimiento"
+                      lineageId="Package\ETL1\BD.Outputs[Excel Source Output].Columns[Fch nacimiento]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de ID empleado]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de ID empleado]"
+                      name="Copia de ID empleado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD.Outputs[Excel Source Output].Columns[ID empleado]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Apellido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Apellido]"
+                      name="Copia de Apellido"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD.Outputs[Excel Source Output].Columns[Apellido]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Nombre]"
+                      name="Copia de Nombre"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD.Outputs[Excel Source Output].Columns[Nombre]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Seccional]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Seccional]"
+                      name="Copia de Seccional"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD.Outputs[Excel Source Output].Columns[Seccional]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Facultad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Facultad]"
+                      name="Copia de Facultad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD.Outputs[Excel Source Output].Columns[Facultad]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Cargo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Cargo]"
+                      name="Copia de Cargo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD.Outputs[Excel Source Output].Columns[Cargo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Salario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Salario]"
+                      name="Copia de Salario"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD.Outputs[Excel Source Output].Columns[Salario]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Fch comienzo]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Fch comienzo]"
+                      name="Copia de Fch comienzo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD.Outputs[Excel Source Output].Columns[Fch comienzo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Fch nacimiento]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copia de Fch nacimiento]"
+                      name="Copia de Fch nacimiento"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL1\BD.Outputs[Excel Source Output].Columns[Fch nacimiento]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL1\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\ETL1\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 1].Columns[ID empleado]"
+                      cachedDataType="r8"
+                      cachedName="ID empleado"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[ID empleado]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[ID empleado]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 1].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellido"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Apellido]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Apellido]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 1].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Nombre]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Nombre]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 1].Columns[Seccional]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Seccional"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Seccional]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Seccional]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 1].Columns[Facultad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Facultad"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Facultad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Facultad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 1].Columns[Cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Cargo"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Cargo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Cargo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 1].Columns[Salario]"
+                      cachedDataType="cy"
+                      cachedName="Salario"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Salario]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Salario]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 1].Columns[Fch comienzo]"
+                      cachedDataType="date"
+                      cachedName="Fch comienzo"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Fch comienzo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Fch comienzo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 1].Columns[Fch nacimiento]"
+                      cachedDataType="date"
+                      cachedName="Fch nacimiento"
+                      lineageId="Package\ETL1\BD1.Outputs[Excel Source Output].Columns[Fch nacimiento]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Fch nacimiento]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\ETL1\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 2].Columns[ID empleado]"
+                      cachedDataType="r8"
+                      cachedName="ID empleado"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[ID empleado]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[ID empleado]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 2].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellido"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Apellido]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Apellido]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 2].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Nombre]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Nombre]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 2].Columns[Seccional]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Seccional"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Seccional]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Seccional]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 2].Columns[Facultad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Facultad"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Facultad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Facultad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 2].Columns[Cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Cargo"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Cargo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Cargo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 2].Columns[Salario]"
+                      cachedDataType="cy"
+                      cachedName="Salario"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Salario]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Salario]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 2].Columns[Fch comienzo]"
+                      cachedDataType="date"
+                      cachedName="Fch comienzo"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Fch comienzo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Fch comienzo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL1\Union All.Inputs[Union All Input 2].Columns[Fch nacimiento]"
+                      cachedDataType="date"
+                      cachedName="Fch nacimiento"
+                      lineageId="Package\ETL1\BD2.Outputs[Excel Source Output].Columns[Fch nacimiento]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Fch nacimiento]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\ETL1\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\ETL1\Union All.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL1\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[ID empleado]"
+                      dataType="r8"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[ID empleado]"
+                      name="ID empleado" />
+                    <outputColumn
+                      refId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Apellido]"
+                      name="Apellido" />
+                    <outputColumn
+                      refId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Seccional]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Seccional]"
+                      name="Seccional" />
+                    <outputColumn
+                      refId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Facultad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Facultad]"
+                      name="Facultad" />
+                    <outputColumn
+                      refId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Cargo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Cargo]"
+                      name="Cargo" />
+                    <outputColumn
+                      refId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Salario]"
+                      dataType="cy"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Salario]"
+                      name="Salario" />
+                    <outputColumn
+                      refId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Fch comienzo]"
+                      dataType="date"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Fch comienzo]"
+                      name="Fch comienzo" />
+                    <outputColumn
+                      refId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Fch nacimiento]"
+                      dataType="date"
+                      lineageId="Package\ETL1\Union All.Outputs[Union All Output 1].Columns[Fch nacimiento]"
+                      name="Fch nacimiento" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL1.Paths[Data Conversion Output]"
+              endId="Package\ETL1\Union All.Inputs[Union All Input 1]"
+              name="Data Conversion Output"
+              startId="Package\ETL1\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\ETL1.Paths[Data Conversion Output1]"
+              endId="Package\ETL1\Union All.Inputs[Union All Input 2]"
+              name="Data Conversion Output"
+              startId="Package\ETL1\Data Conversion 1.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\ETL1.Paths[Data Conversion Output2]"
+              endId="Package\ETL1\Union All.Inputs[Union All Input 3]"
+              name="Data Conversion Output"
+              startId="Package\ETL1\Data Conversion 2.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\ETL1.Paths[Excel Source Output]"
+              endId="Package\ETL1\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\ETL1\BD2.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\ETL1.Paths[Excel Source Output1]"
+              endId="Package\ETL1\Data Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\ETL1\BD1.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\ETL1.Paths[Excel Source Output2]"
+              endId="Package\ETL1\Data Conversion 2.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\ETL1\BD.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\ETL1.Paths[Union All Output 1]"
+              endId="Package\ETL1\BDUNION.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\ETL1\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="102,42"
+          Id="Package\ETL1"
+          TopLeft="160,94" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ETL1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="125,42"
+          Id="Package\ETL1\BDUNION"
+          TopLeft="253,332" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\ETL1\BD2"
+          TopLeft="429,40" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\ETL1\Union All"
+          TopLeft="257,229" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\ETL1\Data Conversion"
+          TopLeft="56,145" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\ETL1\Data Conversion 1"
+          TopLeft="425,153" />
+        <EdgeLayout
+          Id="Package\ETL1.Paths[Data Conversion Output]"
+          TopLeft="134,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="164.666666666667,42"
+              Start="0,0"
+              End="164.666666666667,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8711256117455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.8711256117455"
+                    Point2="0,24.8711256117455"
+                    Point3="4,24.8711256117455" />
+                  <mssgle:LineSegment
+                    End="160.666666666667,24.8711256117455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="160.666666666667,24.8711256117455"
+                    Point2="164.666666666667,24.8711256117455"
+                    Point3="164.666666666667,28.8711256117455" />
+                  <mssgle:LineSegment
+                    End="164.666666666667,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL1.Paths[Union All Output 1]"
+          TopLeft="316.5,271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL1.Paths[Excel Source Output]"
+          TopLeft="478,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.5,71"
+              Start="0,0"
+              End="29.5,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5"
+                    Point2="0,35.5"
+                    Point3="4,35.5" />
+                  <mssgle:LineSegment
+                    End="25.5,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.5,35.5"
+                    Point2="29.5,35.5"
+                    Point3="29.5,39.5" />
+                  <mssgle:LineSegment
+                    End="29.5,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL1.Paths[Data Conversion Output1]"
+          TopLeft="507.5,195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-171.166666666667,34"
+              Start="0,0"
+              End="-171.166666666667,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.1337683523654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.1337683523654"
+                    Point2="0,20.1337683523654"
+                    Point3="-4,20.1337683523654" />
+                  <mssgle:LineSegment
+                    End="-167.166666666667,20.1337683523654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-167.166666666667,20.1337683523654"
+                    Point2="-171.166666666667,20.1337683523654"
+                    Point3="-171.166666666667,24.1337683523654" />
+                  <mssgle:LineSegment
+                    End="-171.166666666667,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\ETL1\BD1"
+          TopLeft="68,34" />
+        <EdgeLayout
+          Id="Package\ETL1.Paths[Excel Source Output1]"
+          TopLeft="117,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17,69"
+              Start="0,0"
+              End="17,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="4,34.5" />
+                  <mssgle:LineSegment
+                    End="13,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13,34.5"
+                    Point2="17,34.5"
+                    Point3="17,38.5" />
+                  <mssgle:LineSegment
+                    End="17,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="93,42"
+          Id="Package\ETL1\BD"
+          TopLeft="235,48" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\ETL1\Data Conversion 2"
+          TopLeft="248,149" />
+        <EdgeLayout
+          Id="Package\ETL1.Paths[Excel Source Output2]"
+          TopLeft="281.5,90">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49,59"
+              Start="0,0"
+              End="49,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="4,29.5" />
+                  <mssgle:LineSegment
+                    End="45,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45,29.5"
+                    Point2="49,29.5"
+                    Point3="49,33.5" />
+                  <mssgle:LineSegment
+                    End="49,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL1.Paths[Data Conversion Output2]"
+          TopLeft="330.5,191">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13,38"
+              Start="0,0"
+              End="-13,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="-4,19" />
+                  <mssgle:LineSegment
+                    End="-9,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9,19"
+                    Point2="-13,19"
+                    Point3="-13,23" />
+                  <mssgle:LineSegment
+                    End="-13,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL1\BDUNION">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL1\BD2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL1\BD1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL1\BD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

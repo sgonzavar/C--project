@@ -1,0 +1,63 @@
+La liga de natación está interesada en una aplicación para el cálculo
+de los puntajes de clavados para las competencias internacionales.
+El puntaje se calcula con base a la puntuación de tres jueces y el el grado
+de dificultad del salto.
+La puntuación de los jueces se promedia y se multiplica por el grado de 
+dificultad.
+La puntuación varía entre 0.0 y 10.0 y el grado de dificultad entre 1.0 y 4.0.
+Si el torneo es de ciclo olímpico el puntaje final obtenido se amplía en un
+20%, de lo contrario no se multiplica por nada.
+Ejemplo:
+Puntaje 1: 5.0
+Puntaje 2: 5.0
+Puntaje 3: 5.0
+
+Grado de dificultad: 2.0
+
+Cálculo = (5.0 + 5.0 + 5.0)/ 3 * 2.0
+Cálculo = 10.0
+Si es ciclo olímpico: 10 * 1.2 = 12
+Si no es ciclo olímpico: 10
+
+Entregue una hoja con su nombre, el grupo (Ma-Ju 6-8), fecha del examen,
+Indicar el número del parcial: 1.
+Adicionalmente cree una carpeta con su nombre y entregue los archivos de 
+extensión .cs
+Clase .cs
+Pagina .aspx.cs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

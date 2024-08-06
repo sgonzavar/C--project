@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-AIT9IB1.ETL"
+  DTS:DTSID="{3DF111FB-9898-456D-B180-EF44000365AB}"
+  DTS:CreationName="ADO">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=DESKTOP-AIT9IB1;Initial Catalog=ETL;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Integration Services ProjectETL Ejemplo-{3DF111FB-9898-456D-B180-EF44000365AB}DESKTOP-AIT9IB1.ETL;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

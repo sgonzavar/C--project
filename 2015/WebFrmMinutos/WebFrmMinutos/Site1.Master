@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebFrmMinutos.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 80%;
+            border: 1px solid #00FF99;
+            background-color: #CCFFFF;
+        }
+        .auto-style2 {
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2" colspan="2" style="text-align: center"><strong>MINUTOS</strong></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right"><strong>Valor Recarga :</strong></td>
+                    <td>
+                        <asp:TextBox ID="txtVRecarga" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:Label ID="lblError" runat="server" style="text-align: center"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right"><strong>Total Minutos :</strong></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right"><strong>Total Minutos Adicionales :</strong></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right"><strong>Total :</strong></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+            <table class="auto-style1">
+            </table>
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

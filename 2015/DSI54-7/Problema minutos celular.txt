@@ -1,0 +1,16 @@
+Una empresa de celulares está interesada en un programa para el cálculo
+de la venta de sus planes corporativos.
+Las empresas están calificadas en: 
+
+GOLD
+PLATA
+BRONCE
+
+La empresa ofrece los siguientes planes:
+$50.000		500 minutos
+$75.000		1.000 minutos
+$100.000	2.000 minutos
+
+A las empersas tipo GOLD les ofrece un 50% de incremento en sus planes
+A las empersas tipo PLATA les ofrece un 25% de incremento en sus planes
+A las empersas tipo BRONCE les ofrece un 10% de incremento en sus planes

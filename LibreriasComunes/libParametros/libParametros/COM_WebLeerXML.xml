@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+ <Parametros>
+    <Servidor>SALAK404-23</Servidor>
+    <BaseDatos>DBempresaXX</BaseDatos>
+    <Usuario>PedroLopez</Usuario>
+    <Clave>Pepito_lop3z</Clave>
+    <Seguridad>Si</Seguridad>
+ </Parametros>

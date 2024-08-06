@@ -1,0 +1,758 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/21/2018 6:19:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-AIT9IB1"
+  DTS:CreatorName="DESKTOP-AIT9IB1\HP"
+  DTS:DTSID="{B4A1067C-CFDF-4153-97B3-486DD73534DC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="COMPANY"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{DDE2668E-1C47-4669-8D52-253AD3125019}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{18A50B80-918F-4F6C-B506-B52E355CE9AB}"
+      DTS:ObjectName="Administrador de conexiones con Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\HP\Desktop\COMPAÑIA.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-AIT9IB1.Compañia 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{445D029D-4B94-4836-BDE1-1ED9B8969EE0}"
+      DTS:ObjectName="DESKTOP-AIT9IB1.Compañia 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-AIT9IB1;Initial Catalog=Compañia;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-COMPANY-{445D029D-4B94-4836-BDE1-1ED9B8969EE0}DESKTOP-AIT9IB1.Compañia 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\COMPANY"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BBDCCC07-6070-46A5-A4E2-8756E36B35C5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="COMPANY"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\COMPANY\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\COMPANY\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\COMPANY\Data Conversion.Inputs[Data Conversion Input].Columns[COD_APTITUD]"
+                      cachedDataType="r8"
+                      cachedName="COD_APTITUD"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[COD_APTITUD]" />
+                    <inputColumn
+                      refId="Package\COMPANY\Data Conversion.Inputs[Data Conversion Input].Columns[TRABAJO_EQUIPO]"
+                      cachedDataType="r8"
+                      cachedName="TRABAJO_EQUIPO"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[TRABAJO_EQUIPO]" />
+                    <inputColumn
+                      refId="Package\COMPANY\Data Conversion.Inputs[Data Conversion Input].Columns[CARISMA]"
+                      cachedDataType="r8"
+                      cachedName="CARISMA"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[CARISMA]" />
+                    <inputColumn
+                      refId="Package\COMPANY\Data Conversion.Inputs[Data Conversion Input].Columns[RESPONSABILIDAD]"
+                      cachedDataType="r8"
+                      cachedName="RESPONSABILIDAD"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[RESPONSABILIDAD]" />
+                    <inputColumn
+                      refId="Package\COMPANY\Data Conversion.Inputs[Data Conversion Input].Columns[POLIBALENTISMO]"
+                      cachedDataType="r8"
+                      cachedName="POLIBALENTISMO"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[POLIBALENTISMO]" />
+                    <inputColumn
+                      refId="Package\COMPANY\Data Conversion.Inputs[Data Conversion Input].Columns[SEGURIDAD]"
+                      cachedDataType="r8"
+                      cachedName="SEGURIDAD"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[SEGURIDAD]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\COMPANY\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de COD_APTITUD]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de COD_APTITUD]"
+                      name="Copia de COD_APTITUD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[COD_APTITUD]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de TRABAJO_EQUIPO]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de TRABAJO_EQUIPO]"
+                      name="Copia de TRABAJO_EQUIPO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[TRABAJO_EQUIPO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de CARISMA]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de CARISMA]"
+                      name="Copia de CARISMA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[CARISMA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de RESPONSABILIDAD]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de RESPONSABILIDAD]"
+                      name="Copia de RESPONSABILIDAD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[RESPONSABILIDAD]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de POLIBALENTISMO]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de POLIBALENTISMO]"
+                      name="Copia de POLIBALENTISMO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[POLIBALENTISMO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de SEGURIDAD]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de SEGURIDAD]"
+                      name="Copia de SEGURIDAD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[SEGURIDAD]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\COMPANY\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\COMPANY\OLE DB APTITUDES"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB APTITUDES"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TBL_APTITUD]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\COMPANY\OLE DB APTITUDES.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-AIT9IB1.Compañia 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-AIT9IB1.Compañia 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].Columns[Copia de COD_APTITUD]"
+                      cachedDataType="r8"
+                      cachedName="Copia de COD_APTITUD"
+                      externalMetadataColumnId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[COD_APTITUD]"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de COD_APTITUD]" />
+                    <inputColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].Columns[Copia de TRABAJO_EQUIPO]"
+                      cachedDataType="r8"
+                      cachedName="Copia de TRABAJO_EQUIPO"
+                      externalMetadataColumnId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[TRABAJO_EQUIPO]"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de TRABAJO_EQUIPO]" />
+                    <inputColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].Columns[Copia de CARISMA]"
+                      cachedDataType="r8"
+                      cachedName="Copia de CARISMA"
+                      externalMetadataColumnId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[CARISMA]"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de CARISMA]" />
+                    <inputColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].Columns[Copia de RESPONSABILIDAD]"
+                      cachedDataType="r8"
+                      cachedName="Copia de RESPONSABILIDAD"
+                      externalMetadataColumnId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[RESPONSABILIDAD]"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de RESPONSABILIDAD]" />
+                    <inputColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].Columns[Copia de POLIBALENTISMO]"
+                      cachedDataType="r8"
+                      cachedName="Copia de POLIBALENTISMO"
+                      externalMetadataColumnId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[POLIBALENTISMO]"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de POLIBALENTISMO]" />
+                    <inputColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].Columns[Copia de SEGURIDAD]"
+                      cachedDataType="r8"
+                      cachedName="Copia de SEGURIDAD"
+                      externalMetadataColumnId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[SEGURIDAD]"
+                      lineageId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de SEGURIDAD]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[COD_APTITUD]"
+                      dataType="i4"
+                      name="COD_APTITUD" />
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[TRABAJO_EQUIPO]"
+                      dataType="i4"
+                      name="TRABAJO_EQUIPO" />
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[CARISMA]"
+                      dataType="i4"
+                      name="CARISMA" />
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[RESPONSABILIDAD]"
+                      dataType="i4"
+                      name="RESPONSABILIDAD" />
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[POLIBALENTISMO]"
+                      dataType="i4"
+                      name="POLIBALENTISMO" />
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input].ExternalColumns[SEGURIDAD]"
+                      dataType="i4"
+                      name="SEGURIDAD" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\COMPANY\OLE DB APTITUDES.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\COMPANY\OLE DB APTITUDES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\COMPANY\OLE DB APTITUDES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\COMPANY\OLE DB APTITUDES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\COMPANY\TBL_APTITUDES"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="TBL_APTITUDES"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">TBL_APTITUD$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\COMPANY\TBL_APTITUDES.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[COD_APTITUD]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[COD_APTITUD]"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[COD_APTITUD]"
+                      name="COD_APTITUD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[TRABAJO_EQUIPO]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[TRABAJO_EQUIPO]"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[TRABAJO_EQUIPO]"
+                      name="TRABAJO_EQUIPO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[CARISMA]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[CARISMA]"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[CARISMA]"
+                      name="CARISMA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[RESPONSABILIDAD]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[RESPONSABILIDAD]"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[RESPONSABILIDAD]"
+                      name="RESPONSABILIDAD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[POLIBALENTISMO]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[POLIBALENTISMO]"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[POLIBALENTISMO]"
+                      name="POLIBALENTISMO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[SEGURIDAD]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[SEGURIDAD]"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].Columns[SEGURIDAD]"
+                      name="SEGURIDAD"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[COD_APTITUD]"
+                      dataType="r8"
+                      name="COD_APTITUD" />
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[TRABAJO_EQUIPO]"
+                      dataType="r8"
+                      name="TRABAJO_EQUIPO" />
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[CARISMA]"
+                      dataType="r8"
+                      name="CARISMA" />
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[RESPONSABILIDAD]"
+                      dataType="r8"
+                      name="RESPONSABILIDAD" />
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[POLIBALENTISMO]"
+                      dataType="r8"
+                      name="POLIBALENTISMO" />
+                    <externalMetadataColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output].ExternalColumns[SEGURIDAD]"
+                      dataType="r8"
+                      name="SEGURIDAD" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[COD_APTITUD]"
+                      dataType="r8"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[COD_APTITUD]"
+                      name="COD_APTITUD" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[TRABAJO_EQUIPO]"
+                      dataType="r8"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[TRABAJO_EQUIPO]"
+                      name="TRABAJO_EQUIPO" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[CARISMA]"
+                      dataType="r8"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[CARISMA]"
+                      name="CARISMA" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[RESPONSABILIDAD]"
+                      dataType="r8"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[RESPONSABILIDAD]"
+                      name="RESPONSABILIDAD" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[POLIBALENTISMO]"
+                      dataType="r8"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[POLIBALENTISMO]"
+                      name="POLIBALENTISMO" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[SEGURIDAD]"
+                      dataType="r8"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[SEGURIDAD]"
+                      name="SEGURIDAD" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\COMPANY.Paths[Data Conversion Output]"
+              endId="Package\COMPANY\OLE DB APTITUDES.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\COMPANY\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\COMPANY.Paths[Excel Source Output]"
+              endId="Package\COMPANY\Data Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\COMPANY\TBL_APTITUDES.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="127,42"
+          Id="Package\COMPANY"
+          TopLeft="137,127" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\COMPANY">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\COMPANY\Data Conversion"
+          TopLeft="172,216" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\COMPANY\OLE DB APTITUDES"
+          TopLeft="178,302" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\COMPANY\TBL_APTITUDES"
+          TopLeft="154,111" />
+        <EdgeLayout
+          Id="Package\COMPANY.Paths[Excel Source Output]"
+          TopLeft="233,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17,63"
+              Start="0,0"
+              End="17,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="4,31.5" />
+                  <mssgle:LineSegment
+                    End="13,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13,31.5"
+                    Point2="17,31.5"
+                    Point3="17,35.5" />
+                  <mssgle:LineSegment
+                    End="17,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COMPANY.Paths[Data Conversion Output]"
+          TopLeft="250,258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.5,44"
+              Start="0,0"
+              End="14.5,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="4,22" />
+                  <mssgle:LineSegment
+                    End="10.5,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.5,22"
+                    Point2="14.5,22"
+                    Point3="14.5,26" />
+                  <mssgle:LineSegment
+                    End="14.5,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\COMPANY\OLE DB APTITUDES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\COMPANY\TBL_APTITUDES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

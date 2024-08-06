@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+      
+<Base_Datos>
+  <DATOS_EMPLEADO>
+   
+    <EMPLEADO>
+       <NOMBRE>JUAN CARLOS</NOMBRE>
+       <APELLIDOS>ALVARES SIERRA</APELLIDOS>
+       <CARGO>INGENIERO SOPORTE</CARGO>
+       <TELEFONO Celular="3001554888" Casa ="45569988" Trabajo="5646511"></TELEFONO>
+    </EMPLEADO>
+   
+    <EMPLEADO>
+       <NOMBRE>ANA ISABEL</NOMBRE>
+       <APELLIDOS>RESTREPO </APELLIDOS>
+       <CARGO>INGENIERO DISEÑO</CARGO>
+       <TELEFONO Celular="3125488879" Casa ="6598877" Trabajo="2587413"></TELEFONO>
+    </EMPLEADO>
+ 
+</DATOS_EMPLEADO> 
+</Base_Datos>

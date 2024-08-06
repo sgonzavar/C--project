@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<imprenta>
+  <descuento>
+       <cantidad>
+           <porcentaje_descuento Cantidad_Minima ="1" Cantidad_Maxima ="50">0</porcentaje_descuento>
+           <porcentaje_descuento Cantidad_Minima ="51" Cantidad_Maxima ="500">5</porcentaje_descuento>
+           <porcentaje_descuento Cantidad_Minima ="501" Cantidad_Maxima ="2000">10</porcentaje_descuento>
+           <porcentaje_descuento Cantidad_Minima ="2001" Cantidad_Maxima ="5000">20</porcentaje_descuento>
+           <porcentaje_descuento Cantidad_Minima ="5001" Cantidad_Maxima ="1000000">50</porcentaje_descuento>
+       </cantidad>
+  </descuento>
+</imprenta>

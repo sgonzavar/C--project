@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-AIT9IB1.BDINVENTARIO"
+  DTS:DTSID="{237D2B43-A59E-4AC9-9F9B-20B43621353C}"
+  DTS:CreationName="ADO">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=DESKTOP-AIT9IB1;Initial Catalog=BDINVENTARIO;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Integration Services Project1-{237D2B43-A59E-4AC9-9F9B-20B43621353C}DESKTOP-AIT9IB1.BDINVENTARIO;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,55 @@
+1. El dueño de una imprenta está interesado en una aplicación 
+que le permita facturar los servicios de impresión de libros.
+El costo del libro es función del tipo de pasta, del tipo de papel y
+del tipo de impresión. 
+Pasta: Lujo: $10.000 
+       Normal: $5.000
+Tipo de Papel: Lujo: $1.000/hoja
+	       Normal: $350/hoja
+	       Reciclado: $50/hoja
+Tipo impresión: Color: $500/hoja
+		Blanco y negro $150/hoja.
+Se ofrecen descuentos por el número de copias: 
+Nro copias:
+1-50		0%
+51 - 500	5%
+501 - 2.000	10%
+>2.000		20%
+
+Elaborar un programa que utilice clases para resolver el problema, utilice
+reglas de negocio
+
+2. Una empresa de celulares está interesada en una aplicación para
+la venta de minutos. El valor del minuto es a $200
+Valor recarga		Minutos adicionales
+$5.000 o menos			0
+%5.001 - $10.000		20
+$10.001 - 50.000		100
+>$50.000			500
+
+Haga una aplicación donde se presenten los minutos
+que compra el usuario diferenciando los que compra por la
+recarga de los adicionales.
+
+3. Una empresa de confecciones está interesada en una aplicación para el cálculo del salario de
+sus vendedores: Ellos tienen un salario básico y unas comisiones de ventas:
+Tela cruda: 
+Ventas < 10.000.000  Comisión: 1.5%
+Ventas entre 10 M y 20 M Comisión: 2.5%
+Ventas > 20.000.000 Comisión: 3.5%
+Tela confeccionada:
+Ventas < 5.000.000  Comisión: 2%
+Ventas entre 5 M y 10 M Comisión: 3.5%
+Ventas > 10.000.000 Comisión: 5%
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Servicios_Modelaje>
+  <Descuentos AnosMinimo="0" AnosMaximo="2">0</Descuentos>
+  <Descuentos AnosMinimo="3" AnosMaximo="5">10</Descuentos>
+  <Descuentos AnosMinimo="6" AnosMaximo="10">15</Descuentos>
+  <Descuentos AnosMinimo="10" AnosMaximo="9999">20</Descuentos>
+</Servicios_Modelaje>
+  

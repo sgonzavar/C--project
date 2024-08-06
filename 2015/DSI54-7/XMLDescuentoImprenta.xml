@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<IMPRENTA>
+  <DESCUENTOS>
+    <PORCENTAJE_DESCUENTO Cantidad_Minima="1" Cantidad_Maxima="50">0</PORCENTAJE_DESCUENTO>
+    <PORCENTAJE_DESCUENTO Cantidad_Minima="51" Cantidad_Maxima="500">5</PORCENTAJE_DESCUENTO>
+    <PORCENTAJE_DESCUENTO Cantidad_Minima="501" Cantidad_Maxima="2000">10</PORCENTAJE_DESCUENTO>
+    <PORCENTAJE_DESCUENTO Cantidad_Minima="2001" Cantidad_Maxima="1000000">20</PORCENTAJE_DESCUENTO>
+  </DESCUENTOS>
+</IMPRENTA>

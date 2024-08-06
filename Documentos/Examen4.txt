@@ -1,0 +1,25 @@
+Examen final Programacion Orientada a la WEB
+
+1. Elabore una aplicación con capas para grabar el registro de los visitantes a la Ciudad de Cartagena.
+   En el aeropuerto se está haciendo una encuesta con los turistas extranjeros donde se les pregunta
+   el número del pasaporte, el nombre, la fecha de salida del país, el país de origen (Debe ser presentado)
+   en un combo y el motivo de la visita (Texto libre).
+   Presente la información en un grid.
+   Realice el proceso de grabar y de consultar (Consulte por el código)
+   
+   Valor: 1.25 Combo
+          1.25 Grid
+          1.25 Insert
+          1.25 Select
+   Tiene que utilizar procedimientos almacenados para las consultas a la base de datos.
+   
+   Entregue una hoja con su nombre, el grupo, la fecha de presentación.
+   Si funciona (cualquiera de las 4 funcionalidades) debe registrarlo en la hoja y mostrarlo al profesor
+   para que firme.
+
+   Entregue una carpeta con su nombre y los archivos de extensión .cs, el archivo de conexión .xml,
+   los procedimientos almacenados.
+
+   La base de datos será entregada por el profesor y si la va a hacer, debe respetar el nombre entregado.
+   El sitio web se tiene que llamar ExamenFinal.
+

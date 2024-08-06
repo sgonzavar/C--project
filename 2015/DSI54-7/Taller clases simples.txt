@@ -1,0 +1,18 @@
+1. Una empresa de celulares está interesada en una aplicación para la venta de minutos.
+El valor del minuto es a $200
+Valor recarga		Minutos adicionales
+$5.000 o menos			0
+%5.001 - $10.000		20
+$10.001 - 50.000		100
+>$50.000			500
+
+Haga una aplicación donde se presenten los minutos que compra el usuario diferenciando los que compra por la recarga de los adicionales.
+
+2. Una empresa que saca pases de conducción está interesada en una aplicación para generar los pagos por la renovación de las licencias.
+Si la persona requiere curso de conducción práctico, se cobra $30.000 por clase, mínimo se deben tomar 8 clases.
+El curso teórico tiene un costo de $75.000. Si la persona quiere, puede presentar un examen de suficiencia con un costo de $50.000.
+El costo de la licencia es de $125.000.
+
+Calcule el costo de la licencia, presente el valor a pagar, el valor antes de iva, y el valor del iva.
+
+Los valores que se presentan incluyen el iva.

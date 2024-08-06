@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Conexion_Base_Datos>
+  <Servidor>.</Servidor>
+  <BaseDatos>DBBiblioteca</BaseDatos>
+  <Usuario></Usuario>
+  <Clave></Clave>
+  <SeguridadIntegrada>Si</SeguridadIntegrada>
+</Conexion_Base_Datos>

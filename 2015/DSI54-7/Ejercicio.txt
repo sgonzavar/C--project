@@ -1,0 +1,25 @@
+Elabore una aplicacion de clases que permita calcular 
+el valor a pagar o el dinero a devolver por los impuestos 
+generados en el año 2.015.
+
+La DIAN cobra los impuestos con base en los ingresos 
+recibidos por la persona en el año. 
+Se cobra el 0% a las personas que reciben menos de $30.000.000
+6% entre $30.000.000 y menos de $50.000.000
+12% a los que ganan $50.000.000 o mas
+
+Se debe ingresar las retenciones realizadas en el año
+IMPUESTO
+++++++++++++++++++++++++
+Ingresoanual   		lye
+RetenciónFuente		lye
+ValorImpuestoTeorico	sl
+ValorPagar		sl
+PorcentajeImpuesto	priv
+Error			sl
+---------------------------------
+CalcularPagoImpuesto() publico
+CacularImpuestoTeorico() privado
+
+
+se inicializa datos de entrada
